@@ -749,20 +749,26 @@ strong {
 .fortschritt {
   background-color: var(--dark-color);
 }
-
-.reviews-block {
+.header-text {
+  background-color: var(--dark-color);
+  border-radius: var(--border-radius-medium);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+}
+.fortschritt-block {
   background-color: var(--section-bg-color);
   border-radius: var(--border-radius-medium);
   position: relative;
   overflow: hidden;
 }
 
-.reviews-block .border-top {
+.fortschritt-block .border-top {
   border-top-color: rgba(255, 255, 255, 0.35) !important;
 }
 
-.reviews-block-image-wrap {
-  background-image: url('https://placehold.co/1000x667?text=Placeholder');
+.fortschritt-block-image-wrap {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -787,7 +793,7 @@ strong {
   color: rgba(255, 255, 255, 0.75);
 }
 
-.reviews-group i {
+.fortschritt-group i {
   color: var(--white-color);
 }
 
@@ -921,7 +927,7 @@ strong {
   }
 
   .goal-block-wrap,
-  .reviews-block-image-wrap,
+  .fortschritt-block-image-wrap,
   .fortschritt-block-info {
     padding: 20px;
   }
@@ -971,7 +977,7 @@ strong {
     font-size: 12px;
   }
 
-  .reviews-block-image-wrap {
+  .fortschritt-block-image-wrap {
     flex-direction: column;
   }
 
