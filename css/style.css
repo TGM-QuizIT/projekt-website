@@ -738,17 +738,6 @@ strong {
   bottom: 4px;
   padding-bottom: 6px;
 }
-.badge::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -5px;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-right: 10px solid var(--primary-color);
-}
-
 
 /*---------------------------------------
   Fortschritt
