@@ -803,8 +803,8 @@ strong {
 -----------------------------------------*/
 .site-footer {
   background-color: var(--dark-color);
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-top: 2px solid var(--white-color);
 }
 
