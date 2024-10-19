@@ -565,6 +565,8 @@ strong {
 .hero-background {
   background-color: var(--section-bg-color);
   padding: 20px;
+  margin-left: 5%;
+  margin-right: 5%;
   border-radius: var(--border-radius-medium);
   margin-top: 10%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
