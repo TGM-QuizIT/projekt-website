@@ -591,7 +591,6 @@ strong {
   background-color: var(--secondary-color);
   position: relative;
 }
-
 .goals .ratio {
   border-radius: var(--border-radius-medium);
 }
@@ -623,6 +622,10 @@ strong {
 
 .goals h6 {
   color: var(--secondary-color);
+}
+
+.team-section {
+  background-color: var(--dark-color);
 }
 
 .team-block-wrap {
@@ -685,7 +688,8 @@ strong {
   OUR GOALS
 -----------------------------------------*/
 .goals-section {
-  background-image: url('https://placehold.co/1500x1000?text=Placeholder');
+  background-color: var(--dark-color);
+  /*background-image: url('https://placehold.co/1500x1000?text=Placeholder');*/
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -786,7 +790,7 @@ strong {
   SITE FOOTER              
 -----------------------------------------*/
 .site-footer {
-  background-color: var(--primary-color);
+  background-color: var(--dark-color);
   padding-top: 100px;
   padding-bottom: 100px;
 }
