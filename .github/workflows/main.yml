@@ -1,0 +1,28 @@
+name: Deploy Website via SFTP
+
+on:
+  push:
+    branches:
+      - release  # Triggers when a push is made to the 'release' branch
+
+jobs:
+  deploy:
+    name: Deploy to Server via SFTP
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout the latest code from the repository
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Upload files via SFTP
+    - name: Deploy website via SFTP
+      uses: appleboy/ssh-action@v0.1.7
+      with:
+        host: ${{ secrets.STFP_HOST }}
+        username: ${{ secrets.SFTP_USERNAME }} 
+        password: ${{ secrets.SFTP_PASSWORD }} 
+        port: ${{ secrets.SFTP_PORT }}      
+        source: "./"                          
+        target: "/htdocs"
+
