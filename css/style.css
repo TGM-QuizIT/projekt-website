@@ -752,7 +752,7 @@ strong {
   background-color: var(--dark-color);
 }
 .header-text {
-  background-color: var(--dark-color);
+  background-color: var(--section-bg-color);
   border-radius: var(--border-radius-medium);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   padding-left: 15px;
@@ -771,6 +771,7 @@ strong {
 }
 
 .fortschritt-block-image-wrap {
+  background-color: var(--dark-color);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -798,6 +799,7 @@ strong {
 .fortschritt-group i {
   color: var(--white-color);
 }
+
 
 
 /*---------------------------------------
