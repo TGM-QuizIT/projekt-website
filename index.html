@@ -409,7 +409,7 @@
                                 <div v-for="(fortschritt, index) in currentFortschritt" :key="index" :class="{'timeline-container' : true,'timeline-container-left': index % 2 === 0, 'timeline-container-right': index % 2 !== 0}">
                                     <div class="timeline-content">
                                         <div class="fortschritt-block">
-                                            <div class="fortschritt-block-image-wrap d-flex align-items-center" :style="{ backgroundImage: 'url(' + fortschritt.image + ')' }">
+                                            <div class="fortschritt-block-image-wrap d-flex align-items-center" :style="fortschritt.image ? { backgroundImage: 'url(' + fortschritt.image + ')' } : {}">
                                                 <div class="header-text">
                                                     <h6 class="text-white mb-0">{{ fortschritt.title }}</h6>
                                                     <p class="badge ms-0 me-0" style="margin-top: 10px;" :style="getBadgeStyle(fortschritt.department)">
