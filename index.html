@@ -396,7 +396,7 @@
                 </section>
 
                 <section class="fortschritt section-padding section-bg" id="section_4">
-                    <div class="container">
+                    <div class="container" id="app">
                         <div class="row justify-content-center">
 
                             <div class="col-lg-12 col-12 text-center mb-4 pb-lg-2">
@@ -406,92 +406,23 @@
                             </div>
 
                             <div class="timeline">
-                                <div class="timeline-container timeline-container-left">
+                                <div v-for="(fortschritt, index) in currentFortschritt" :key="index" :class="{'timeline-container' : true,'timeline-container-left': index % 2 === 0, 'timeline-container-right': index % 2 !== 0}">
                                     <div class="timeline-content">
                                         <div class="fortschritt-block">
-                                            <div class="fortschritt-block-image-wrap d-flex align-items-center">
-
+                                            <div class="fortschritt-block-image-wrap d-flex align-items-center" :style="{ backgroundImage: 'url(' + fortschritt.image + ')' }">
                                                 <div class="header-text">
-                                                    <h6 class="text-white mb-0">Datenbank angelegt</h6>
-                                                    <p class="badge ms-0 me-0" style="background-color: #F8FF2E; color:black; margin-top: 10px;"><em>Backend</em></p>
+                                                    <h6 class="text-white mb-0">{{ fortschritt.title }}</h6>
+                                                    <p class="badge ms-0 me-0" style="margin-top: 10px;" :style="getBadgeStyle(fortschritt.department)">
+                                                        <em>{{ fortschritt.department }}</em>
+                                                    </p>
                                                 </div>
                                             </div>
 
                                             <div class="fortschritt-block-info">
-                                                <p>Die Datenbank und alle notwendigen Tabellen wurden angelegt. Diese wurden zu Testzwecken zunächst mit Mock-Daten befüllt.</p>
-
+                                                <p>{{ fortschritt.description }}</p>
                                                 <div class="d-flex border-top pt-3 mt-4">
                                                     <div class="publisher ms-auto">
-                                                        <strong class="text-white">15.10.2024</strong>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="timeline-container timeline-container-right">
-                                    <div class="timeline-content">
-                                        <div class="fortschritt-block">
-                                            <div class="fortschritt-block-image-wrap d-flex align-items-center" style="background-image: url('images/fortschritt/01_10_2024.png')">
-
-                                                <div class="header-text">
-                                                    <h6 class="text-white mb-0">Erste Mockups</h6>
-                                                    <p class="badge ms-0 me-0" style="background-color: #000000; margin-top: 10px;"><em>UI / UX</em></p>
-                                                </div>
-                                            </div>
-
-                                            <div class="fortschritt-block-info">
-                                                <p>Die ersten Mockups für das Design der App, die mittels Figma umgesetzt wurden, sind fertig.</p>
-
-                                                <div class="d-flex border-top pt-3 mt-4">
-                                                    <div class="publisher ms-auto">
-                                                        <strong class="text-white">01.10.2024</strong>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="timeline-container timeline-container-left">
-                                    <div class="timeline-content">
-                                        <div class="fortschritt-block">
-                                            <div class="fortschritt-block-image-wrap d-flex align-items-center" style="background-image: url('https://www.lernen.net/wp-content/uploads/2018/11/recherche-recherchieren-feature-depo.jpg');">
-
-                                                <div class="header-text">
-                                                    <h6 class="text-white mb-0">Start der Studie</h6>
-                                                    <p class="badge ms-0 me-0" style="background-color: #EB0CD8; margin-top: 10px;"><em>Alle</em></p>
-                                                </div>
-                                            </div>
-
-                                            <div class="fortschritt-block-info">
-                                                <p>Die Recherche der Technologien hat begonnen. In dieser wird untersucht, welche Technologie sich am besten für unser Projekt eignet.</p>
-
-                                                <div class="d-flex border-top pt-3 mt-4">
-                                                    <div class="publisher ms-auto">
-                                                        <strong class="text-white">17.09.2024</strong>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="timeline-container timeline-container-right">
-                                    <div class="timeline-content">
-                                        <div class="fortschritt-block">
-                                            <div class="fortschritt-block-image-wrap d-flex align-items-center" style="background-image: url('https://media04.meinbezirk.at/article/2016/09/02/2/9133512_XXL.jpg?1534673125');">
-
-                                                <div class="header-text">
-                                                    <h6 class="text-white mb-0">Projektstart</h6>
-                                                    <p class="badge ms-0 me-0" style="background-color: #EB0CD8; margin-top: 10px;"><em>Alle</em></p>
-                                                </div>
-                                            </div>
-
-                                            <div class="fortschritt-block-info">
-                                                <p>Auf der Projektwoche in Kärnten war der Startschuss unserer Diplomarbeit. Dort haben wir die ersten Details unseres Projektes ausgearbeitet.</p>
-
-                                                <div class="d-flex border-top pt-3 mt-4">
-                                                    <div class="publisher ms-auto">
-                                                        <strong class="text-white">09.09.2024</strong>
+                                                        <strong class="text-white">{{ fortschritt.date }}</strong>
                                                     </div>
                                                 </div>
                                             </div>
@@ -499,6 +430,17 @@
                                     </div>
                                 </div>
                             </div>
+                            <a class="btn custom-btn custom-border-btn smoothscroll me-3"  style="width: auto; margin-top: 20px;" v-on:click="toogleShowMore">
+                                <div class="d-flex justify-content-center align-items-center" v-if="!showMore">
+                                    Mehr anzeigen
+                                    <i class="bi bi-caret-down-fill" style="font-size: 20px"></i>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center" v-if="showMore">
+                                    Weniger anzeigen
+                                    <i class="bi bi-caret-up-fill" style="font-size: 20px"></i>
+                                </div>
+                            </a>
+
 
                         </div>
                     </div>
@@ -512,7 +454,7 @@
                                 <em class="text-white d-block mb-4">Projektwebsite Diplomarbeit "QuizIT"</em>
                             </div>
                             <div class="col-lg-2 col-12 mt-4">
-                                <em class="text-white d-block mb-4">Stand: <strong>19.10.2024</strong></em>
+                                <em class="text-white d-block mb-4">Stand: <strong>20.10.2024</strong></em>
                             </div>
                         </div>
                     </div>
@@ -526,6 +468,97 @@
         <script src="js/click-scroll.js"></script>
         <script src="js/vegas.min.js"></script>
         <script src="js/custom.js"></script>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     </body>
 </html>
+<script>
+    const {createApp} = Vue
+    createApp({
+        data() {
+            return {
+                showMore: false,
+                fortschritt: [
+                    {
+                        title: "Datenbank angelegt",
+                        description: "Die Datenbank und alle notwendigen Tabellen wurden angelegt. Diese wurden zu Testzwecken zunächst mit Mock-Daten befüllt.",
+                        date: "15.10.2024",
+                        department: "Backend",
+                        image: ""
+                    },
+                    {
+                        title: "Erste Mockups",
+                        description: "Die ersten Mockups für das Design der App, die mittels Figma umgesetzt wurden, sind fertig.",
+                        date: "01.10.2024",
+                        department: "UI/UX",
+                        image: "images/fortschritt/01_10_2024.png"
+                    },
+                    {
+                        title: "Start der Studie",
+                        description: "Die Recherche der Technologien hat begonnen. In dieser wird untersucht, welche Technologie sich am besten für unser Projekt eignet.",
+                        date: "17.09.2024",
+                        department: "Alle",
+                        image: "https://www.lernen.net/wp-content/uploads/2018/11/recherche-recherchieren-feature-depo.jpg"
+                    },
+                    {
+                        title: "Projektstart",
+                        description: "Auf der Projektwoche in Kärnten war der Startschuss unserer Diplomarbeit. Dort haben wir die ersten Details unseres Projektes ausgearbeitet.",
+                        date: "09.09.2024",
+                        department: "Alle",
+                        image: "https://media04.meinbezirk.at/article/2016/09/02/2/9133512_XXL.jpg?1534673125"
+                    }
+                ]
+            }
+        },
+        methods: {
+            toogleShowMore() {
+                this.showMore = !this.showMore
+            },
+            getBadgeStyle(department) {
+                switch (department) {
+                    case 'iOS':
+                        return {
+                            backgroundColor: '#0A84FF',
+                            color: 'white'
+                        };
+                    case 'Android':
+                        return {
+                            backgroundColor: '#009E50',
+                            color: 'white'
+                        };
+                    case 'Backend':
+                        return {
+                            backgroundColor: '#F8FF2E',
+                            color: 'black'
+                        };
+                    case 'UI/UX':
+                        return {
+                            backgroundColor: '#000000',
+                            color: 'white'
+                        };
+                    case 'Web-Frontend':
+                        return {
+                            backgroundColor: '#F50202',
+                            color: 'white'
+                        };
+                    case 'Alle':
+                        return {
+                            backgroundColor: '#EB0CD8',
+                            color: 'white'
+                        };
+                    default:
+                        return {
+                            backgroundColor: '#CCCCCC', // Default background color
+                            color: 'black'              // Default text color
+                        };
+                }
+            }
+        },
+        computed: {
+            currentFortschritt() {
+                return this.showMore ? this.fortschritt : this.fortschritt.slice(0, 3);
+
+            }
+        }
+    }).mount('#app')
+</script>
