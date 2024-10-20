@@ -745,6 +745,69 @@ strong {
   padding-bottom: 6px;
 }
 
+/*
+  Technologien
+ */
+.technology-section {
+  background-color: var(--dark-color);
+}
+
+.technology-block-wrap {
+  background-color: var(--white-color);
+  border-radius: var(--border-radius-medium);
+  position: relative;
+  overflow: hidden;
+  max-height: 450px;
+  cursor: pointer;
+}
+
+.technology-block-wrap:hover .technology-block-image {
+  transform: scale(1.05);
+}
+
+.technology-block-image-wrap {
+  width: 100%;
+}
+
+.technology-block-image {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s;
+}
+
+.technology-block-info {
+  /*background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(188, 108, 37, 1));*/
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 1));
+
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 30px;
+}
+
+.technology-block-info .badge {
+  margin: auto;
+  top: 2px;
+  bottom: 0;
+}
+
+.technology-description {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s, max-height 0.3s;
+}
+
+.technology-block-wrap:hover .technology-description {
+  opacity: 1;
+  max-height: 150px;
+}
+
 /*---------------------------------------
   Fortschritt
 -----------------------------------------*/
