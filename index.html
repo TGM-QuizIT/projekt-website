@@ -556,8 +556,15 @@
         },
         computed: {
             currentFortschritt() {
-                return this.showMore ? this.fortschritt : this.fortschritt.slice(0, 3);
+                return this.showMore ? this.sortedFortschritt : this.sortedFortschritt.slice(0, 3);
 
+            },
+            sortedFortschritt() {
+                return this.fortschritt.sort((a, b) => {
+                    const dateA = new Date(a.date.split('.').reverse().join('-'));
+                    const dateB = new Date(b.date.split('.').reverse().join('-'));
+                    return dateB - dateA;
+                });
             }
         }
     }).mount('#app')
