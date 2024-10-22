@@ -638,36 +638,37 @@
         data() {
             return {
                 showMore: false,
-                fortschritt: [
+                fortschritt: []
+                    /*[
                     {
                         title: "Datenbank angelegt",
-                        description: "Die Datenbank und alle notwendigen Tabellen wurden angelegt. Diese wurden zu Testzwecken zunächst mit Mock-Daten befüllt.",
+                        description: "Die Datenbank und alle notwendigen Tabellen wurden erfolgreich angelegt. Um die Funktionalität zu testen, wurden die Tabellen zunächst mit Mock-Daten gefüllt. Diese dienen dazu, typische Datenbankoperationen wie Einfügen, Abrufen, Aktualisieren und Löschen zu simulieren. So können bereits im frühen Stadium mögliche Fehler oder Optimierungspotenziale erkannt werden, bevor produktive Daten eingespielt werden.",
                         date: "15.10.2024",
                         department: "Backend",
-                        image: ""
+                        image: "https://www.exasol.com/app/uploads/2023/12/thumbnail-what-is-a-relational-database-1024x585.webp"
                     },
                     {
                         title: "Erste Mockups",
-                        description: "Die ersten Mockups für das Design der App, die mittels Figma umgesetzt wurden, sind fertig.",
+                        description: "Die ersten Design-Mockups der App wurden erfolgreich in Figma erstellt. Diese Entwürfe bieten eine visuelle Vorschau der Benutzeroberfläche und der Benutzerführung. Sie ermöglichen es, Feedback zu sammeln und gegebenenfalls Anpassungen vorzunehmen, bevor die Entwicklung der finalen Version beginnt.",
                         date: "01.10.2024",
                         department: "UI/UX",
                         image: "images/fortschritt/01_10_2024.png"
                     },
                     {
                         title: "Start der Studie",
-                        description: "Die Recherche der Technologien hat begonnen. In dieser wird untersucht, welche Technologien sich am besten für unser Projekt eignen.",
+                        description: "Die Recherche zu den passenden Technologien für unser Projekt hat begonnen. In diesem Prozess wird detailliert untersucht, welche Tools, Programmiersprachen und Frameworks sich am besten für die Anforderungen eignen. Ziel ist es, eine fundierte Entscheidung zu treffen, um sowohl die technische Effizienz als auch die langfristige Skalierbarkeit und Wartbarkeit des Projekts sicherzustellen.",
                         date: "17.09.2024",
                         department: "Alle",
                         image: "https://www.lernen.net/wp-content/uploads/2018/11/recherche-recherchieren-feature-depo.jpg"
                     },
                     {
                         title: "Projektstart",
-                        description: "Auf der Projektwoche in Kärnten war der Startschuss unserer Diplomarbeit. Dort haben wir die ersten Details unseres Projektes ausgearbeitet.",
+                        description: "Auf der Projektwoche in Kärnten war der Startschuss unserer Diplomarbeit. Dort haben wir die ersten Details unserer Projektes ausgearbeitet. Der Projektantrag inklusive der Aufgabenverteilung wurde ebenfalls dort formuliert. Basierend auf unserer Einteilung wurden dann die ersten Schritte für die Organisation und Planung unserer Diplomarbeit eingeleitet, wie die Definition von Tickets oder groben Skizzen, um sich auf den Ablauf unserer App festzulegen.",
                         date: "09.09.2024",
                         department: "Alle",
                         image: "https://media04.meinbezirk.at/article/2016/09/02/2/9133512_XXL.jpg?1534673125"
                     }
-                ]
+                ]*/
             }
         },
         methods: {
@@ -726,6 +727,16 @@
                     return dateB - dateA;
                 });
             }
+        },
+        mounted() {
+            fetch('fortschritt.json')
+                .then(response => response.json())
+                .then(data => {
+                    this.fortschritt = data;
+                })
+                .catch(error => {
+                    console.error('Error fetching JSON:', error);
+                });
         }
     }).mount('#app')
 </script>
