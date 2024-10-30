@@ -542,6 +542,7 @@ strong {
 
 .hero-img {
   filter: brightness(0) invert(1);
+  max-height: 400px;
 }
 .small-text {
   color: var(--secondary-color);

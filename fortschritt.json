@@ -4,7 +4,7 @@
     "description": "Die Datenbank und alle notwendigen Tabellen wurden erfolgreich angelegt. Um die Funktionalität zu testen, wurden die Tabellen zunächst mit Mock-Daten gefüllt. Diese dienen dazu, typische Datenbankoperationen wie Einfügen, Abrufen, Aktualisieren und Löschen zu simulieren. So können bereits im frühen Stadium mögliche Fehler oder Optimierungspotenziale erkannt werden, bevor produktive Daten eingespielt werden.",
     "date": "15.10.2024",
     "department": "Backend",
-    "image": "https://www.exasol.com/app/uploads/2023/12/thumbnail-what-is-a-relational-database-1024x585.webp"
+    "image": "https://assets.datamation.com/uploads/2023/06/dm-top-database-challenges.png"
   },
   {
     "title": "Erste Mockups",
