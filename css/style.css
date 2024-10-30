@@ -298,8 +298,9 @@ strong {
 }
 
 .custom-border-btn:hover {
-  background-color: var(--dark-color);
-  border: 2px solid var(--dark-color) !important;
+  color: var(--section-bg-color);
+  background-color: var(--white-color);
+  border: 2px solid var(--section-bg-color) !important;
 }
 
 
@@ -523,7 +524,7 @@ strong {
   HERO        
 -----------------------------------------*/
 .hero-section {
-  background-color: var(--dark-color);
+  background-color: var(--section-bg-color);
   position: relative;
   overflow: hidden;
   min-height: 620px;
@@ -564,13 +565,13 @@ strong {
 }
 
 .hero-background {
-  background-color: var(--section-bg-color);
+  /* background-color: var(--section-bg-color); */
   padding: 20px;
   margin-left: 5%;
   margin-right: 5%;
   border-radius: var(--border-radius-medium);
   margin-top: 10%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
 
 .opening-hours-list {
@@ -634,7 +635,7 @@ strong {
 }
 
 .team-section {
-  background-color: var(--dark-color);
+  background-color: var(--section-bg-color);
 }
 
 .team-block-wrap {
@@ -664,7 +665,9 @@ strong {
 
 .team-block-info {
   /*background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(188, 108, 37, 1));*/
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(45, 183, 241, 0.7));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(45, 183, 241, 0.5));
+
+
 
   position: absolute;
   z-index: 2;
@@ -697,7 +700,7 @@ strong {
   OUR GOALS
 -----------------------------------------*/
 .goals-section {
-  background-color: var(--dark-color);
+  background-color: var(--section-bg-color);
   /*background-image: url('https://placehold.co/1500x1000?text=Placeholder');*/
   background-repeat: no-repeat;
   background-size: cover;
@@ -750,7 +753,7 @@ strong {
   Technologien
  */
 .technology-section {
-  background-color: var(--dark-color);
+  background-color: var(--section-bg-color);
 }
 
 .technology-block-wrap {
@@ -813,7 +816,7 @@ strong {
   Fortschritt
 -----------------------------------------*/
 .fortschritt {
-  background-color: var(--dark-color);
+  background-color: var(--section-bg-color);
 }
 .header-text {
   background-color: var(--dark-color);
@@ -824,7 +827,7 @@ strong {
   padding-top: 15px;
 }
 .fortschritt-block {
-  background-color: var(--section-bg-color);
+  background-color: var(--custom-btn-bg-hover-color);
   border-radius: var(--border-radius-medium);
   position: relative;
   overflow: hidden;
@@ -869,7 +872,7 @@ strong {
   SITE FOOTER              
 -----------------------------------------*/
 .site-footer {
-  background-color: var(--dark-color);
+  background-color: var(--section-bg-color);
   padding-top: 10px;
   padding-bottom: 10px;
   border-top: 2px solid var(--white-color);
