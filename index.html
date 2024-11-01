@@ -581,8 +581,12 @@
                                             <div class="fortschritt-block-image-wrap d-flex align-items-center" :style="fortschritt.image ? { backgroundImage: 'url(' + fortschritt.image + ')' } : {}">
                                                 <div class="header-text">
                                                     <h6 class="text-white mb-0">{{ fortschritt.title }}</h6>
-                                                    <p class="badge ms-0 me-0" style="margin-top: 10px;" :style="getBadgeStyle(fortschritt.department)">
-                                                        <em>{{ fortschritt.department }}</em>
+                                                    <p v-for="(department, index) in fortschritt.department"
+                                                       :key="index"
+                                                       class="badge ms-0 me-2"
+                                                       style="margin-top: 10px;"
+                                                       :style="getBadgeStyle(department)">
+                                                        <em>{{ department }}</em>
                                                     </p>
                                                 </div>
                                             </div>
@@ -599,7 +603,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a class="btn custom-btn custom-border-btn smoothscroll me-3"  style="width: auto; margin-top: 20px;" v-on:click="toogleShowMore" v-if="fortschritt.length >3">
+                            <a class="btn custom-btn custom-border-btn smoothscroll me-3" style="width: auto; margin-top: 20px;" v-on:click="toggleShowMore" v-if="fortschritt.length >3">
                                 <div class="d-flex justify-content-center align-items-center" v-if="!showMore">
                                     Mehr anzeigen
                                     <i class="bi bi-caret-down-fill" style="font-size: 20px"></i>
@@ -623,7 +627,7 @@
                                 <em class="text-white d-block mb-4">Projektwebsite Diplomarbeit "QuizIT"</em>
                             </div>
                             <div class="col-lg-2 col-12 mt-4">
-                                <em class="text-white d-block mb-4">Stand: <strong>20.10.2024</strong></em>
+                                <em class="text-white d-block mb-4">Stand: <strong>01.11.2024</strong></em>
                             </div>
                         </div>
                     </div>
@@ -651,43 +655,43 @@
                 {
                         "title": "Erste fertige Designs",
                         "description": "Es wurden die ersten Views in iOS entwickelt und designed: Die Startseite und Fächer-View. Dabei wurden Custom-Fonts installiert und die korrekten Farben importiert. Außerdem ist es nun möglich Bilder aus dem Internet zu laden und anzuzeigen.",
-                        "date": "1.11.2024",
-                        "department": "iOS",
+                        "date": "01.11.2024",
+                        "department": ["iOS", "Android"],
                         "image": "images/fortschritt/01_11_2024.png"
                     },
                     {
                         "title": "Datenbank angelegt",
                         "description": "Die Datenbank und alle notwendigen Tabellen wurden erfolgreich angelegt. Um die Funktionalität zu testen, wurden die Tabellen zunächst mit Mock-Daten gefüllt. Diese dienen dazu, typische Datenbankoperationen wie Einfügen, Abrufen, Aktualisieren und Löschen zu simulieren. So können bereits im frühen Stadium mögliche Fehler oder Optimierungspotenziale erkannt werden, bevor produktive Daten eingespielt werden.",
                         "date": "15.10.2024",
-                        "department": "Backend",
+                        "department": ["Backend"],
                         "image": "https://assets.datamation.com/uploads/2023/06/dm-top-database-challenges.png"
                     },
                     {
                         "title": "Erste Mockups",
                         "description": "Die ersten Design-Mockups der App wurden erfolgreich in Figma erstellt. Diese Entwürfe bieten eine visuelle Vorschau der Benutzeroberfläche und der Benutzerführung. Sie ermöglichen es, Feedback zu sammeln und gegebenenfalls Anpassungen vorzunehmen, bevor die Entwicklung der finalen Version beginnt.",
                         "date": "01.10.2024",
-                        "department": "UI/UX",
+                        "department": ["UI/UX"],
                         "image": "images/fortschritt/01_10_2024.png"
                     },
                     {
                         "title": "Start der Studie",
                         "description": "Die Recherche zu den passenden Technologien für unser Projekt hat begonnen. In diesem Prozess wird detailliert untersucht, welche Tools, Programmiersprachen und Frameworks sich am besten für die Anforderungen eignen. Ziel ist es, eine fundierte Entscheidung zu treffen, um sowohl die technische Effizienz als auch die langfristige Skalierbarkeit und Wartbarkeit des Projekts sicherzustellen.",
                         "date": "17.09.2024",
-                        "department": "Alle",
+                        "department": ["Alle"],
                         "image": "https://www.lernen.net/wp-content/uploads/2018/11/recherche-recherchieren-feature-depo.jpg"
                     },
                     {
                         "title": "Projektstart",
                         "description": "Auf der Projektwoche in Kärnten war der Startschuss unserer Diplomarbeit. Dort haben wir die ersten Details unserer Projektes ausgearbeitet. Der Projektantrag inklusive der Aufgabenverteilung wurde ebenfalls dort formuliert. Basierend auf unserer Einteilung wurden dann die ersten Schritte für die Organisation und Planung unserer Diplomarbeit eingeleitet, wie die Definition von Tickets oder groben Skizzen, um sich auf den Ablauf unserer App festzulegen.",
                         "date": "09.09.2024",
-                        "department": "Alle",
+                        "department": ["Alle"],
                         "image": "https://media04.meinbezirk.at/article/2016/09/02/2/9133512_XXL.jpg?1534673125"
                     }
                 ]
             }
         },
         methods: {
-            toogleShowMore() {
+            toggleShowMore() {
                 this.showMore = !this.showMore
             },
             getBadgeStyle(department) {
