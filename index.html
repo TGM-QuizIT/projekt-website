@@ -627,7 +627,7 @@
                                 <em class="text-white d-block mb-4">Projektwebsite Diplomarbeit "QuizIT"</em>
                             </div>
                             <div class="col-lg-2 col-12 mt-4">
-                                <em class="text-white d-block mb-4">Stand: <strong>25.02.2025</strong></em>
+                                <em class="text-white d-block mb-4">Stand: <strong id="date"></strong></em>
                             </div>
                         </div>
                     </div>
@@ -642,6 +642,14 @@
         <script src="js/vegas.min.js"></script>
         <script src="js/custom.js"></script>
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script>
+            const today = new Date();
+            const formattedDate = today.getDate().toString().padStart(2, '0') + "." +
+                (today.getMonth() + 1).toString().padStart(2, '0') + "." +
+                today.getFullYear();
+
+            document.getElementById("date").textContent = formattedDate;
+        </script>
 
     </body>
 </html>
@@ -652,6 +660,13 @@
             return {
                 showMore: false,
                 fortschritt: [
+                    {
+                        "title": "Beta-Version der App fertig",
+                        "description": "Die App ist sowohl für Android, als auch für iOS fertiggestellt. Um nun ihre Funktionalität sicher zustellen wurde die 1. Beta-Version der iOS-App auf Testflight veröffentlicht.",
+                        "date": "31.03.2025",
+                        "department": ["iOS", "Android"],
+                        "image": "images/fortschritt/2025_03_31.png"
+                    },
                     {
                         "title": "Challenge Requests",
                         "description": "Die API und die Datenbank wurden erweitert, sodass man jetzt auch die Herausforderungen eines User speichern, bearbeiten, löschen aber auch abfragen kann.",
