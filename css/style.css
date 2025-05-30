@@ -632,6 +632,11 @@ strong {
   color: var(--secondary-color);
 }
 
+.datenschutz li {
+  font-size: 0.875rem;
+}
+
+
 .team-section {
   background-color: var(--dark-color);
 }
@@ -734,6 +739,11 @@ strong {
   margin: auto;
   cursor: pointer;
 }
+.text-small {
+  font-size: 0.875rem; /* oder z.B. 14px */
+  color: rgba(255, 255, 255, 1); /* wie dein <small> bisher */
+}
+
 
 .badge {
   background-color: var(--primary-color);
